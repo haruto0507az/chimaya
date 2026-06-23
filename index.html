@@ -1,90 +1,134 @@
-```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>だるくま。公式サイト</title>
+<title>だるくま。公式サイト | ちまや</title>
 
 <style>
+*{ box-sizing:border-box; }
+
 body{
   margin:0;
-  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
-  background:#f3eee8;
-  color:#2b241f;
+  font-family:"Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  background:#f4eee6;
+  color:#2d241f;
 }
 
 header{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  padding:80px 20px 60px;
-  background:linear-gradient(180deg,#2b241f,#4a3a31);
+  padding:60px 20px;
+  background:
+    radial-gradient(circle at top,#6b5547 0%,#3a2d27 45%,#211916 100%);
   color:white;
 }
 
-header h1{
-  font-size:48px;
+.hero h1{
+  font-size:64px;
   margin:0;
+  letter-spacing:0.08em;
 }
 
-header p{
-  font-size:18px;
-  margin-top:15px;
-}
-
-main{
-  max-width:900px;
-  margin:40px auto;
-  padding:0 20px;
-}
-
-.card{
-  background:white;
-  border-radius:25px;
-  padding:35px;
-  margin-bottom:30px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.12);
-  text-align:center;
-}
-
-.title{
-  font-size:32px;
-  margin-bottom:10px;
-}
-
-.catch{
-  font-size:18px;
+.hero p{
+  font-size:20px;
+  margin:20px 0 35px;
   line-height:1.8;
+}
+
+.badge{
+  display:inline-block;
+  background:#fff3;
+  border:1px solid #ffffff55;
+  padding:8px 18px;
+  border-radius:999px;
+  margin-bottom:20px;
+  font-weight:bold;
 }
 
 .button{
   display:inline-block;
-  margin-top:20px;
-  padding:15px 35px;
-  background:#2b241f;
-  color:white;
+  padding:16px 38px;
+  background:#ffffff;
+  color:#2d241f;
   text-decoration:none;
   border-radius:999px;
   font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,0.18);
+}
+
+main{
+  max-width:1050px;
+  margin:-70px auto 0;
+  padding:0 20px 50px;
+}
+
+.card{
+  background:#fffdf9;
+  border-radius:32px;
+  padding:45px;
+  margin-bottom:32px;
+  box-shadow:0 16px 40px rgba(60,40,25,0.14);
+  text-align:center;
+}
+
+h2{
+  font-size:34px;
+  margin:0 0 18px;
+}
+
+.lead{
+  font-size:18px;
+  line-height:2;
+  color:#4a3a32;
 }
 
 .stamps{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:15px;
-  margin-top:20px;
+  gap:16px;
+  margin-top:28px;
 }
 
 .stamp{
-  background:#f8f3ee;
-  border-radius:18px;
-  padding:18px;
+  background:#f3ece4;
+  border-radius:22px;
+  padding:20px 10px;
   font-weight:bold;
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,0.05);
+}
+
+.profile{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  text-align:left;
+}
+
+.profile-box{
+  background:#f7f1ea;
+  padding:28px;
+  border-radius:24px;
+}
+
+.profile-box h3{
+  margin-top:0;
 }
 
 footer{
   text-align:center;
-  padding:30px;
-  color:#6b5b50;
+  padding:35px 20px;
+  color:#6a5a51;
+}
+
+@media(max-width:700px){
+  .hero h1{ font-size:44px; }
+  main{ margin:-40px auto 0; }
+  .card{ padding:30px 22px; }
+  .profile{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -92,19 +136,22 @@ footer{
 <body>
 
 <header>
-  <h1>だるくま。</h1>
-  <p>だるい毎日に、ちょっと使えるくま。</p>
+  <div class="hero">
+    <div class="badge">LINEスタンプ発売中</div>
+    <h1>だるくま。</h1>
+    <p>だるい毎日に、<br>ちょっと使えるくま。</p>
+    <a class="button" href="#" target="_blank">LINEスタンプを見る</a>
+  </div>
 </header>
 
 <main>
 
   <section class="card">
-    <h2 class="title">だるくま。大学生編</h2>
-    <p class="catch">
+    <h2>だるくま。大学生編</h2>
+    <p class="lead">
       授業、レポート、バイト、金欠。<br>
-      大学生の日常をゆるくだるく表現したLINEスタンプです。
+      大学生のリアルな日常を、ゆるくだるく表現したLINEスタンプです。
     </p>
-    <a class="button" href="#" target="_blank">LINEスタンプを見る</a>
   </section>
 
   <section class="card">
@@ -118,23 +165,36 @@ footer{
       <div class="stamp">単位ください</div>
       <div class="stamp">明日やる</div>
       <div class="stamp">提出できた</div>
+      <div class="stamp">レポート終わらない</div>
+      <div class="stamp">締切あと1時間</div>
     </div>
   </section>
 
   <section class="card">
-    <h2>Creator</h2>
-    <p class="catch">
-      ちまや<br>
-      オリジナルキャラクター「だるくま。」を制作しています。
-    </p>
+    <h2>About</h2>
+    <div class="profile">
+      <div class="profile-box">
+        <h3>だるくま。とは</h3>
+        <p>
+          黒パーカーを着た、ちょっとだるそうなくま。<br>
+          大学生の日常をゆるく生きています。
+        </p>
+      </div>
+      <div class="profile-box">
+        <h3>Creator</h3>
+        <p>
+          ちまや<br>
+          オリジナルキャラクターやLINEスタンプを制作しています。
+        </p>
+      </div>
+    </div>
   </section>
 
 </main>
 
 <footer>
-  © 2026 ちまや
+  © 2026 ちまや / Chimaya
 </footer>
 
 </body>
 </html>
-```
